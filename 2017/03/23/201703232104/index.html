@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="计划," />
+  <meta name="keywords" content="笔记," />
 
 
 
@@ -87,19 +87,31 @@
 
 
 
-<meta name="description" content="计划说明要详细了解的有：1.Java 内部类  先滚去学习java内部类了2.java list、map、set3.java 
-另外还要详细学习的有：嗯还要写个java计划">
+<meta name="description" content="今天内部类的学习，看的比较蛋疼，一些概念看的似懂非懂，总结几点，更多关于内部类的总结还要完全掌握再说。
+内部类的定义：可以将一个类的定义放在另一个类的定义内部，这就是内部类。
+1.内部类可以访问外围对象的所有成员、以及所有元素，而不需要任何特殊条件。
+public class Sequence {
+    private Object[] items;
+    private int  it;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="计划书">
-<meta property="og:url" content="http://yoursite.com/2017/03/23/计划书/index.html">
+<meta property="og:title" content="内部类、map、list、set 小记">
+<meta property="og:url" content="http://yoursite.com/2017/03/23/201703232104/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="计划说明要详细了解的有：1.Java 内部类  先滚去学习java内部类了2.java list、map、set3.java 
-另外还要详细学习的有：嗯还要写个java计划">
-<meta property="og:updated_time" content="2017-03-23T02:21:19.841Z">
+<meta property="og:description" content="今天内部类的学习，看的比较蛋疼，一些概念看的似懂非懂，总结几点，更多关于内部类的总结还要完全掌握再说。
+内部类的定义：可以将一个类的定义放在另一个类的定义内部，这就是内部类。
+1.内部类可以访问外围对象的所有成员、以及所有元素，而不需要任何特殊条件。
+public class Sequence {
+    private Object[] items;
+    private int  it;">
+<meta property="og:updated_time" content="2017-03-23T15:11:22.188Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="计划书">
-<meta name="twitter:description" content="计划说明要详细了解的有：1.Java 内部类  先滚去学习java内部类了2.java list、map、set3.java 
-另外还要详细学习的有：嗯还要写个java计划">
+<meta name="twitter:title" content="内部类、map、list、set 小记">
+<meta name="twitter:description" content="今天内部类的学习，看的比较蛋疼，一些概念看的似懂非懂，总结几点，更多关于内部类的总结还要完全掌握再说。
+内部类的定义：可以将一个类的定义放在另一个类的定义内部，这就是内部类。
+1.内部类可以访问外围对象的所有成员、以及所有元素，而不需要任何特殊条件。
+public class Sequence {
+    private Object[] items;
+    private int  it;">
 
 
 
@@ -127,13 +139,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/03/23/计划书/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/23/201703232104/"/>
 
 
 
 
 
-  <title> 计划书 | Hexo </title>
+  <title> 内部类、map、list、set 小记 | Hexo </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -252,7 +264,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/23/计划书/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/23/201703232104/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="xingLu">
@@ -273,7 +285,7 @@
             
             
               
-                计划书
+                内部类、map、list、set 小记
               
             
           </h1>
@@ -288,7 +300,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-23T09:58:08+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-23T21:04:31+08:00">
                 2017-03-23
               </time>
             
@@ -324,8 +336,50 @@
       
 
       
-        <h1 id="计划说明"><a href="#计划说明" class="headerlink" title="计划说明"></a>计划说明</h1><p>要详细了解的有：<br>1.Java 内部类  先滚去学习java内部类了<br>2.java list、map、set<br>3.java </p>
-<p>另外还要详细学习的有：<br>嗯还要写个java计划</p>
+        <p>今天内部类的学习，看的比较蛋疼，一些概念看的似懂非懂，总结几点，更多关于内部类的总结还要完全掌握再说。</p>
+<p>内部类的定义：可以将一个类的定义放在另一个类的定义内部，这就是内部类。</p>
+<p>1.内部类可以访问外围对象的所有成员、以及所有元素，而不需要任何特殊条件。</p>
+<pre><code>public class Sequence {
+    private Object[] items;
+    private int  it;
+
+    public Sequence(int size){
+        items = new Object [size];
+    }
+
+    class abc{
+        private void next(){
+            //items
+            //it 
+            //此处只举例不再写详细代码叙述
+        }
+    }
+}
+</code></pre><p>2.当内部类需要生成对外部类对象的引用，可以使用外部类的名字后面紧跟圆点和this</p>
+<pre><code>public class DotThis{
+    class Inner{
+        public DotThis outer(){
+            return DotThis.this;
+        }
+    }
+}
+</code></pre><p>3.当需要创建某个内部类的对象，你必须在 new表达式中提供对其他外部类的引用<br>这就需要 .new语法 如下</p>
+<pre><code>public class DotNew{
+    public class Inner{}
+    public static void main(String[] args) {
+        DotNew dn = new DotNew();
+        DotNew.Inner  dni = dn.new Inner();
+    }
+}
+</code></pre><p>必须使用外部类的对象来创建该内部类对象，在拥有外部类对象之前是不可能创建内部类对象的，除非是静态内部类，它就不需要外部类对象的引用。</p>
+<p>内部类先记录到这里，到时再开章节讲。</p>
+<hr>
+<p>Java中提供了一套相当完整的容器类。<br>其中基本类型是<strong>List</strong>、<strong>Set</strong>、<strong>Queue</strong>和<strong>Map</strong>,这些对象类型也被称为集合类</p>
+<p>在容器类中，Set对于每个值只保存一个对象，Map是允许你将某些对象与其他一些对象关联起来的关联数组，java容器类可以自动调整自己的尺寸。</p>
+<p>List的主要实现类有：ArrayList，LinkedList<br>ArrayList 它长于随机访问元素，但是在List的中间插入和移除元素时较慢，<br>LinkedList 它通过代价较低的在List中间进行插入和删除操作，提供了优化的顺序访问，LinkedList在随机访问方面较慢，但是它的特性集较ArrayList更大。<br>两种List都是按照被插入的顺序保存元素。</p>
+<p>下面三种Set相同点，每个相同的项只有保存一次<br>HashSet:使用相当快的获取元素方式，因此存储顺序没有实际意义。<br>TreeSet: 按照比较结果的升序保存对象，<br>LinkedHashSet:按照添加的顺序保存对象。</p>
+<p>三种基本风格的Map:HashMap,TreeMap,LinkedHashMap<br>与HashSet一样，HashMap也提供了最快的查找技术，也没有任何明显顺序保存其元素，<br>TheeMap 按照比较结果的升序来排序，LinkedHashMap按照插入的顺序保存键，同时还保留了HashMap的查询速度。</p>
+<p>笔记先到这里明天还有面试.去睡了</p>
 
       
     </div>
@@ -355,7 +409,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/计划/" rel="tag"># 计划</a>
+            <a href="/tags/笔记/" rel="tag"># 笔记</a>
           
         </div>
       
@@ -368,8 +422,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/22/面试中遇到的一些问题/" rel="next" title="面试中遇到的一些问题">
-                <i class="fa fa-chevron-left"></i> 面试中遇到的一些问题
+              <a href="/2017/03/23/计划书/" rel="next" title="计划书">
+                <i class="fa fa-chevron-left"></i> 计划书
               </a>
             
           </div>
@@ -377,10 +431,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/03/23/201703232104/" rel="prev" title="内部类、map、list、set 小记">
-                内部类、map、list、set 小记 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -427,17 +477,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -490,22 +531,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#计划说明"><span class="nav-number">1.</span> <span class="nav-text">计划说明</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
