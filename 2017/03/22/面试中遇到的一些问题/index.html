@@ -88,27 +88,18 @@
 
 
 <meta name="description" content="今天去面试了下，技术面发现很多自己不熟的地方，特意记下来
-第一个：        线程切换 A线程输出奇数，B线程输出偶数，怎么样以自增的方式输出（1.2.3…）    
-第二个：静态类，匿名内部类 它们之间的区别是什么。
-第三个：map、list、set 它们的主要实现是什么，以及它们实现类之间的区别，        另外说下ArrayList的内部实现？
-第四个：android 中内存泄漏原因">
+第一个:线程切换 A线程输出奇数，B线程输出偶数，怎么样以自增的方式输出（1.2.3…）   刚开始没想到有点愣，平常用不就是 new Thread(new Runable{ run()})…这种形式去写，额外再用个sleep 或者 wait、yield 这几个功能都一样，回来一想 切换：这不就是把线程阻塞换另外个线程吗，这样来回阻塞吗。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="面试中遇到的一些问题">
 <meta property="og:url" content="http://yoursite.com/2017/03/22/面试中遇到的一些问题/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="今天去面试了下，技术面发现很多自己不熟的地方，特意记下来
-第一个：        线程切换 A线程输出奇数，B线程输出偶数，怎么样以自增的方式输出（1.2.3…）    
-第二个：静态类，匿名内部类 它们之间的区别是什么。
-第三个：map、list、set 它们的主要实现是什么，以及它们实现类之间的区别，        另外说下ArrayList的内部实现？
-第四个：android 中内存泄漏原因">
-<meta property="og:updated_time" content="2017-03-22T07:56:42.418Z">
+第一个:线程切换 A线程输出奇数，B线程输出偶数，怎么样以自增的方式输出（1.2.3…）   刚开始没想到有点愣，平常用不就是 new Thread(new Runable{ run()})…这种形式去写，额外再用个sleep 或者 wait、yield 这几个功能都一样，回来一想 切换：这不就是把线程阻塞换另外个线程吗，这样来回阻塞吗。">
+<meta property="og:updated_time" content="2017-03-23T01:48:36.522Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试中遇到的一些问题">
 <meta name="twitter:description" content="今天去面试了下，技术面发现很多自己不熟的地方，特意记下来
-第一个：        线程切换 A线程输出奇数，B线程输出偶数，怎么样以自增的方式输出（1.2.3…）    
-第二个：静态类，匿名内部类 它们之间的区别是什么。
-第三个：map、list、set 它们的主要实现是什么，以及它们实现类之间的区别，        另外说下ArrayList的内部实现？
-第四个：android 中内存泄漏原因">
+第一个:线程切换 A线程输出奇数，B线程输出偶数，怎么样以自增的方式输出（1.2.3…）   刚开始没想到有点愣，平常用不就是 new Thread(new Runable{ run()})…这种形式去写，额外再用个sleep 或者 wait、yield 这几个功能都一样，回来一想 切换：这不就是把线程阻塞换另外个线程吗，这样来回阻塞吗。">
 
 
 
@@ -334,19 +325,151 @@
 
       
         <p>今天去面试了下，技术面发现很多自己不熟的地方，特意记下来</p>
-<p>第一个：<br>        线程切换 A线程输出奇数，B线程输出偶数，怎么样以自增的方式输出（1.2.3…）    </p>
-<p>第二个：静态类，匿名内部类 它们之间的区别是什么。</p>
-<p>第三个：map、list、set 它们的主要实现是什么，以及它们实现类之间的区别，<br>        另外说下ArrayList的内部实现？</p>
-<p>第四个：android 中内存泄漏原因有哪些，除了常见的还有那些特殊的泄漏？</p>
-<p>第五个：说下点击事件的分发。        </p>
-<pre><code>点击事件分发这个是我最气人的地方，明明会但感觉就是答的有问题，越急就越紧张，越紧张就越答不出来，
+<h2 id="第一个-线程切换-A线程输出奇数，B线程输出偶数，怎么样以自增的方式输出（1-2-3…）"><a href="#第一个-线程切换-A线程输出奇数，B线程输出偶数，怎么样以自增的方式输出（1-2-3…）" class="headerlink" title="第一个:线程切换 A线程输出奇数，B线程输出偶数，怎么样以自增的方式输出（1.2.3…）   "></a>第一个:线程切换 A线程输出奇数，B线程输出偶数，怎么样以自增的方式输出（1.2.3…）   </h2><p>刚开始没想到有点愣，平常用不就是 new Thread(new Runable{ run()})…<br>这种形式去写，额外再用个sleep 或者 wait、yield 这几个功能都一样，回来<br>一想 切换：这不就是把线程阻塞换另外个线程吗，这样来回阻塞吗。</p>
+<p>当时我想的是要什么函数去切换吗?没用到过啊</p>
+<pre><code>public static void main(String[] args) {
 
-我看艺术探索，看完觉得会了，并且背了一下，但当时情况就是说不出来，因为那是别人的，你自己并没有完全掌握，现在我尝试用自己的话说出来：
+    Enity enity = new Enity();
+    ThreadA threadA = new ThreadA(enity);
+    ThreadB threadB = new ThreadB(enity);
 
-‘总经理’ 有[事情] 需要处理派给了 ‘经理’ 把[事情] 派给了我 
+    Thread a = new Thread(threadA);
+    a.start();
+    Thread b = new Thread(threadB);
+    b.start();
 
-&quot;我&quot; 处理这个事件 
-</code></pre>
+}
+
+public class ThreadA implements Runnable{
+private Enity enity;
+public ThreadA(Enity enity) {
+    super();
+    this.enity = enity;
+}
+
+public void run() {
+        synchronized (enity) {
+            for(int i=1;i&lt;100;i++){
+                System.out.println( &quot;Thread A: &quot;+i );
+                i++;
+                try {
+                    enity.notifyAll();
+                    enity.wait();
+                    enity.notify();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }    
+    }
+}
+}
+public class ThreadB implements Runnable {
+private Enity enity;
+
+public ThreadB(Enity enity) {
+    super();
+    this.enity = enity;
+}
+
+public void run() {
+    synchronized (enity) {
+        for (int i = 2; i &lt; 100; i++) {
+            System.out.println(&quot;Thread B:&quot; + i);
+            i++;
+            try {
+                enity.notifyAll();
+                enity.wait();
+                enity.notify();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}
+}
+</code></pre><p>借鉴了 <a href="http://blog.csdn.net/sinat_33713995/article/details/51331314" target="_blank" rel="external">博客</a></p>
+<h2 id="第二个：静态类，匿名内部类-它们之间的区别是什么。"><a href="#第二个：静态类，匿名内部类-它们之间的区别是什么。" class="headerlink" title="第二个：静态类，匿名内部类 它们之间的区别是什么。"></a>第二个：静态类，匿名内部类 它们之间的区别是什么。</h2><pre><code>静态类： 所有标注 static字段的函数、变量在jvm启动时就会加载
+内部类： 可以访问外部类所有的元素。
+</code></pre><p>这里还有地方可以补充，等我详细了再说。</p>
+<h2 id="第三个：map、list、set-它们的主要实现是什么，以及它们各实现类之间的区别"><a href="#第三个：map、list、set-它们的主要实现是什么，以及它们各实现类之间的区别" class="headerlink" title="第三个：map、list、set 它们的主要实现是什么，以及它们各实现类之间的区别"></a>第三个：map、list、set 它们的主要实现是什么，以及它们各实现类之间的区别</h2><pre><code>map:HashMap、SortedMap、LinkedHashMap
+list:ArrayList LinkedList
+set:HashSet、
+
+HashMap :
+
+SortedMap :
+
+LinkedHashMap:
+
+ArrayList:
+LinkedList:
+HashSet:
+</code></pre><p>这个先空着把，等我详细了解后再说；</p>
+<h2 id="第四个：android-中内存泄漏原因有哪些？"><a href="#第四个：android-中内存泄漏原因有哪些？" class="headerlink" title="第四个：android 中内存泄漏原因有哪些？"></a>第四个：android 中内存泄漏原因有哪些？</h2><p>1.静态常量导致的内存泄漏：</p>
+<pre><code>private static Context sContext ;
+   @Override
+   protected void onCreate(Bundle savedInstanceState) {
+       super.onCreate(savedInstanceState);
+       setContentView(R.layout.activity_leak);
+       sContext = this;
+}
+</code></pre><p>这里 static Context 持有Activity的引用，导致Activity无法销毁</p>
+<p>2.单例模式导致的内存泄漏</p>
+<pre><code>@Override
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_leak);
+    SingleLeak.getInstance().registerListener(this);
+｝
+
+public class SingleLeak {
+
+private List&lt;OnDataArrivedListener&gt; mOnDataArrivedListener = new ArrayList&lt;OnDataArrivedListener&gt;();
+
+public synchronized void registerListener(OnDataArrivedListener listener){
+    if (!mOnDataArrivedListener .contains(listener))
+        mOnDataArrivedListener.add(listener);
+}
+public synchronized void unregisterListener(OnDataArrivedListener listener){
+        mOnDataArrivedListener.remove(listener);
+}
+
+private SingleLeak(){}
+
+public static SingleLeak getInstance() {
+    return SingletonHolder.INSTANCE;
+}
+
+private static class SingletonHolder{
+    public static final SingleLeak INSTANCE = new SingleLeak();
+}
+
+interface OnDataArrivedListener{
+    void onData();
+}
+}
+</code></pre><p>上面是因为没有解注册的操作所以会引起内存泄漏</p>
+<p>3.属性动画导致的内存泄漏</p>
+<p>属性动画中有一类无限循环的动画，如果activity播放此类动画且没在<br>ondestory 中去停止此类动画，那么动画会一直持有下去，</p>
+<p> ObjectAnimator animator = ObjectAnimator.ofFloat(button,”rotation”,0,360).setDuration(2000);<br> animator.setRepeatCount(ValueAnimator.INFINITE);<br> animator.start();<br>//animator.cancel();</p>
+<p>因为animator 持有view,而view持有activity,最终activity无法释放。</p>
+<h2 id="第五个：说下点击事件的分发。"><a href="#第五个：说下点击事件的分发。" class="headerlink" title="第五个：说下点击事件的分发。        "></a>第五个：说下点击事件的分发。        </h2><p>点击事件分发这个是我最气人的地方，明明会但感觉就是答的有问题，越急就越紧张，越紧张就越答不出来，<br>我看艺术探索，看完觉得会了，并且背了一下，但当时情况就是说不出来，因为那是别人的，你自己并没有完全掌握，现在我尝试用自己的话说出来：<br><del>‘总经理’ 有[事情] 需要处理派给了 ‘经理’ 把[事情] 派给了我</del><br><del>“我” 处理这个事件</del><br><del>有毒，我说不出来了</del> <del>错误</del></p>
+<hr>
+<p>点击事件的分发：其实就是MotionEvent事件的分发过程，当一个MotionEvent产生以后，系统需要把这个事件传递给一个具体的View,而这个传递过程就是分发过程<br>点击事件的分发需要三个很重要的方法来共同完成：dispatchTouchEvent、onInterceptTouchEvent和onTouchEvent。<br>public boolean dispatchTouchEvent(MotionEvent ev)<br>用来进行事件分发。如果事件能够传递给当前view 那么此方法一定会被调用，返回结果受当前View 的onTouchEvent和下级view的dispatchTouchEvent方法的影响，表示是否消耗当前事件。</p>
+<p>public boolean onInterceptTouchEvent(MotionEvent ev)<br>用来判断是否拦截某个事件，如果当前view拦截了某个事件那么在同一事件序列中此方法不会再次被调用。<br>public boolean onTouchEvent(MotionEvent ev)<br>用来处理点击事件，在dispatchTouchEvent方法中调用，返回结果表示是否消耗当前事件，如果不消耗 在同一事件序列中当前view无法再收到事件，</p>
+<p>三者区别用伪代码表示如下：</p>
+<pre><code>public boolean dispatchTouchEvent(MotionEvent ev){
+    boolean consume = false;
+    if(onInterceptTouchEvent(ev)){
+        consume = onTouchEvent(ev);
+    }else{
+        consume = child.dispatchTouchEvent(ev);
+    }
+    return consume;
+}
+</code></pre><p>通过上述伪代码可以大致了解点击事件的传递规则：对于一个根ViewGroup来说，点击事件产生后，首先会传递给它，这时它的dispatchTouchEvent会被调用，如果这个ViewGroup的onInterceptTouchEvent返回true就表示它要拦截当前事件，接着事件会交给ViewGroup的onTouchEvent方法来处理<br>如果ViewGroup的onInterceptTouchEvent不拦截，就会发给子View,接着子View的dispatchTouchEvent方法会被调用，如此反复直到事件被最终处理。</p>
+<p>实际上分发的完整顺序是 Activity &gt; Window &gt; 顶级View ,顶级View按照事件分发机制去分发事件。</p>
+
       
     </div>
 
@@ -443,8 +566,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -497,6 +629,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一个-线程切换-A线程输出奇数，B线程输出偶数，怎么样以自增的方式输出（1-2-3…）"><span class="nav-number">1.</span> <span class="nav-text">第一个:线程切换 A线程输出奇数，B线程输出偶数，怎么样以自增的方式输出（1.2.3…）   </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二个：静态类，匿名内部类-它们之间的区别是什么。"><span class="nav-number">2.</span> <span class="nav-text">第二个：静态类，匿名内部类 它们之间的区别是什么。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三个：map、list、set-它们的主要实现是什么，以及它们各实现类之间的区别"><span class="nav-number">3.</span> <span class="nav-text">第三个：map、list、set 它们的主要实现是什么，以及它们各实现类之间的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四个：android-中内存泄漏原因有哪些？"><span class="nav-number">4.</span> <span class="nav-text">第四个：android 中内存泄漏原因有哪些？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第五个：说下点击事件的分发。"><span class="nav-number">5.</span> <span class="nav-text">第五个：说下点击事件的分发。        </span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
