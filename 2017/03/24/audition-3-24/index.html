@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="笔记," />
+  <meta name="keywords" content="面试," />
 
 
 
@@ -87,31 +87,24 @@
 
 
 
-<meta name="description" content="今天内部类的学习，看的比较蛋疼，一些概念看的似懂非懂，总结几点，更多关于内部类的总结还要完全掌握再说。
-内部类的定义：可以将一个类的定义放在另一个类的定义内部，这就是内部类。
-1.内部类可以访问外围对象的所有成员、以及所有元素，而不需要任何特殊条件。
-public class Sequence {
-    private Object[] items;
-    private int  it;">
+<meta name="description" content="这几天，杭州一直下雨，很烦，进去给了一套笔试题
+
+从一个Activity 启动另一个 Activity后销毁，这过程生命周期是怎么样的？ 原以为是这样的顺序但并不是 A.onPause &amp;gt; A.stop &amp;gt; B.create &amp;gt; A.destory &amp;gt; B.start &amp;gt; B.resume 是这样的：见图 A.onpause &amp;gt; B.onCreate &amp;gt;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="内部类、map、list、set 小记">
-<meta property="og:url" content="http://yoursite.com/2017/03/23/201703232104/index.html">
+<meta property="og:title" content="24号面试的一些记录">
+<meta property="og:url" content="http://yoursite.com/2017/03/24/audition-3-24/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="今天内部类的学习，看的比较蛋疼，一些概念看的似懂非懂，总结几点，更多关于内部类的总结还要完全掌握再说。
-内部类的定义：可以将一个类的定义放在另一个类的定义内部，这就是内部类。
-1.内部类可以访问外围对象的所有成员、以及所有元素，而不需要任何特殊条件。
-public class Sequence {
-    private Object[] items;
-    private int  it;">
-<meta property="og:updated_time" content="2017-03-23T15:11:22.188Z">
+<meta property="og:description" content="这几天，杭州一直下雨，很烦，进去给了一套笔试题
+
+从一个Activity 启动另一个 Activity后销毁，这过程生命周期是怎么样的？ 原以为是这样的顺序但并不是 A.onPause &amp;gt; A.stop &amp;gt; B.create &amp;gt; A.destory &amp;gt; B.start &amp;gt; B.resume 是这样的：见图 A.onpause &amp;gt; B.onCreate &amp;gt;">
+<meta property="og:image" content="http://yoursite.com/images/tag1.PNG">
+<meta property="og:updated_time" content="2017-03-24T14:23:42.336Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="内部类、map、list、set 小记">
-<meta name="twitter:description" content="今天内部类的学习，看的比较蛋疼，一些概念看的似懂非懂，总结几点，更多关于内部类的总结还要完全掌握再说。
-内部类的定义：可以将一个类的定义放在另一个类的定义内部，这就是内部类。
-1.内部类可以访问外围对象的所有成员、以及所有元素，而不需要任何特殊条件。
-public class Sequence {
-    private Object[] items;
-    private int  it;">
+<meta name="twitter:title" content="24号面试的一些记录">
+<meta name="twitter:description" content="这几天，杭州一直下雨，很烦，进去给了一套笔试题
+
+从一个Activity 启动另一个 Activity后销毁，这过程生命周期是怎么样的？ 原以为是这样的顺序但并不是 A.onPause &amp;gt; A.stop &amp;gt; B.create &amp;gt; A.destory &amp;gt; B.start &amp;gt; B.resume 是这样的：见图 A.onpause &amp;gt; B.onCreate &amp;gt;">
+<meta name="twitter:image" content="http://yoursite.com/images/tag1.PNG">
 
 
 
@@ -139,13 +132,13 @@ public class Sequence {
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/03/23/201703232104/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/24/audition-3-24/"/>
 
 
 
 
 
-  <title> 内部类、map、list、set 小记 | Hexo </title>
+  <title> 24号面试的一些记录 | Hexo </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -264,7 +257,7 @@ public class Sequence {
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/23/201703232104/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/24/audition-3-24/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="xingLu">
@@ -285,7 +278,7 @@ public class Sequence {
             
             
               
-                内部类、map、list、set 小记
+                24号面试的一些记录
               
             
           </h1>
@@ -300,8 +293,8 @@ public class Sequence {
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-23T21:04:31+08:00">
-                2017-03-23
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-24T19:01:03+08:00">
+                2017-03-24
               </time>
             
 
@@ -336,50 +329,26 @@ public class Sequence {
       
 
       
-        <p>今天内部类的学习，看的比较蛋疼，一些概念看的似懂非懂，总结几点，更多关于内部类的总结还要完全掌握再说。</p>
-<p>内部类的定义：可以将一个类的定义放在另一个类的定义内部，这就是内部类。</p>
-<p>1.内部类可以访问外围对象的所有成员、以及所有元素，而不需要任何特殊条件。</p>
-<pre><code>public class Sequence {
-    private Object[] items;
-    private int  it;
-
-    public Sequence(int size){
-        items = new Object [size];
-    }
-
-    class abc{
-        private void next(){
-            //items
-            //it 
-            //此处只举例不再写详细代码叙述
-        }
-    }
-}
-</code></pre><p>2.当内部类需要生成对外部类对象的引用，可以使用外部类的名字后面紧跟圆点和this</p>
-<pre><code>public class DotThis{
-    class Inner{
-        public DotThis outer(){
-            return DotThis.this;
-        }
-    }
-}
-</code></pre><p>3.当需要创建某个内部类的对象，你必须在 new表达式中提供对其他外部类的引用<br>这就需要 .new语法 如下</p>
-<pre><code>public class DotNew{
-    public class Inner{}
-    public static void main(String[] args) {
-        DotNew dn = new DotNew();
-        DotNew.Inner  dni = dn.new Inner();
-    }
-}
-</code></pre><p>必须使用外部类的对象来创建该内部类对象，在拥有外部类对象之前是不可能创建内部类对象的，除非是静态内部类，它就不需要外部类对象的引用。</p>
-<p>内部类先记录到这里，到时再开章节讲。</p>
-<hr>
-<p>Java中提供了一套相当完整的容器类。<br>其中基本类型是<strong>List</strong>、<strong>Set</strong>、<strong>Queue</strong>和<strong>Map</strong>,这些对象类型也被称为集合类</p>
-<p>在容器类中，Set对于每个值只保存一个对象，Map是允许你将某些对象与其他一些对象关联起来的关联数组，java容器类可以自动调整自己的尺寸。</p>
-<p>List的主要实现类有：ArrayList，LinkedList<br>ArrayList 它长于随机访问元素，但是在List的中间插入和移除元素时较慢，<br>LinkedList 它通过代价较低的在List中间进行插入和删除操作，提供了优化的顺序访问，LinkedList在随机访问方面较慢，但是它的特性集较ArrayList更大。<br>两种List都是按照被插入的顺序保存元素。</p>
-<p>下面三种Set相同点，每个相同的项只有保存一次<br>HashSet:使用相当快的获取元素方式，因此存储顺序没有实际意义。<br>TreeSet: 按照比较结果的升序保存对象，<br>LinkedHashSet:按照添加的顺序保存对象。</p>
-<p>三种基本风格的Map:HashMap,TreeMap,LinkedHashMap<br>与HashSet一样，HashMap也提供了最快的查找技术，也没有任何明显顺序保存其元素，<br>TheeMap 按照比较结果的升序来排序，LinkedHashMap按照插入的顺序保存键，同时还保留了HashMap的查询速度。</p>
-<p>笔记先到这里明天还有面试.去睡了</p>
+        <p>这几天，杭州一直下雨，很烦，进去给了一套笔试题</p>
+<ol>
+<li><p>从一个Activity 启动另一个 Activity后销毁，这过程生命周期是怎么样的？<br> 原以为是这样的顺序但并不是<br> A.onPause &gt; A.stop &gt; B.create &gt; A.destory &gt; B.start &gt; B.resume<br> 是这样的：见图<br> A.onpause &gt; B.onCreate &gt; B.onStart &gt; B.onResume &gt; A.onStop &gt; A.onDestroy<br> <img src="/images/tag1.PNG"></p>
+</li>
+<li><p>讲一下Binder 的实现原理？</p>
+</li>
+<li><p>用过那些图片加载框架，简述下它们大体的架构？</p>
+</li>
+<li><p>server保活。</p>
+</li>
+<li><p>使用js调用java</p>
+</li>
+<li><p>android有那些存储方式，它们的区别是什么？</p>
+</li>
+<li><p>用java实现经典约瑟夫问题，一群人去自杀，每个人抽（叫）一个号，当叫到M时此人自杀，问最后一个自杀的是多少号。</p>
+</li>
+</ol>
+<p>总共九道，有一个记不清了，另外一个是布局题没什么难度， 这个约瑟夫问题不知道怎么解决，没答，我自己思考就是一个集合，随机删除一个元素，最后删除的一个是谁。还有个是用js调用java中的方法，对Js了解的少，不清楚。</p>
+<p>答完后人事过来面，栽了， 问了一些个人情况，你自己的优点，缺点啊。<br>另外问了 公司为什么要录用你。期间问了下，你是不是紧张，天可怜见，我摸爬滚打这么多年，紧张二字早就从我字典中删除了，当然要是一下子来四五个人怼我肯定还是会有点紧张的，但是solo真的没什么怕。<br>她之所以问，是因为我今天早上自己作死，用手机刷了两小时的 B乎和B站<br>眼睛睁不开了，再也不能这样了，这两个破软件早晚给卸载了。</p>
+<p>人事没过，技术面都没有，真鸡巴惨！</p>
 
       
     </div>
@@ -409,7 +378,7 @@ public class Sequence {
       
         <div class="post-tags">
           
-            <a href="/tags/笔记/" rel="tag"># 笔记</a>
+            <a href="/tags/面试/" rel="tag"># 面试</a>
           
         </div>
       
@@ -422,8 +391,8 @@ public class Sequence {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/23/计划书/" rel="next" title="计划书">
-                <i class="fa fa-chevron-left"></i> 计划书
+              <a href="/2017/03/23/201703232104/" rel="next" title="内部类、map、list、set 小记">
+                <i class="fa fa-chevron-left"></i> 内部类、map、list、set 小记
               </a>
             
           </div>
@@ -431,10 +400,6 @@ public class Sequence {
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/03/24/audition-3-24/" rel="prev" title="24号面试的一些记录">
-                24号面试的一些记录 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
