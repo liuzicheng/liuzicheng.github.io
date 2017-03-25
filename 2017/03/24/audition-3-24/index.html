@@ -98,7 +98,7 @@
 
 从一个Activity 启动另一个 Activity后销毁，这过程生命周期是怎么样的？ 原以为是这样的顺序但并不是 A.onPause &amp;gt; A.stop &amp;gt; B.create &amp;gt; A.destory &amp;gt; B.start &amp;gt; B.resume 是这样的：见图 A.onpause &amp;gt; B.onCreate &amp;gt;">
 <meta property="og:image" content="http://yoursite.com/images/tag1.PNG">
-<meta property="og:updated_time" content="2017-03-24T14:23:42.336Z">
+<meta property="og:updated_time" content="2017-03-25T13:58:05.547Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="24号面试的一些记录">
 <meta name="twitter:description" content="这几天，杭州一直下雨，很烦，进去给了一套笔试题
@@ -335,18 +335,20 @@
 </li>
 <li><p>讲一下Binder 的实现原理？</p>
 </li>
-<li><p>用过那些图片加载框架，简述下它们大体的架构？</p>
+<li><p>用过那些图片加载框架，简述下它们大体的架构？<br> 图片加载框架少不了缓存，缓存又有两种缓存是内存缓存和磁盘缓存。</p>
 </li>
 <li><p>server保活。</p>
 </li>
-<li><p>使用js调用java</p>
+<li><p>举例两种以上js调用java的方法。</p>
 </li>
-<li><p>android有那些存储方式，它们的区别是什么？</p>
+<li><p>android有那些存储方式，它们的区别是什么？<br> 主要有三种存储方式，分别是文件存储、SharedPreference存储和数据库，额外可以保存在sd卡上，但有一些安全问题。<br> 文件存储是android最基本的数据存储方式,它适合存储一些简单的文本数据或二进制数据。<br> SharedPreference是以键值对的方式来存储数据，它通过获取时设置的属性来设置范围，但是原来的四种属性，在各版本上陆续被废弃，所以现在可用的<br> 是MODE_PRIVATE,也就是说SharedPreference只能够在当前应用程序范围内读取。<br> 数据库存储，SQLite数据库是一个轻量级的关系型数据库，数据库保存在私有存储空间，那么只有你自己才能范围，数据库保存在sd卡，任何应用都可以访问。</p>
 </li>
-<li><p>用java实现经典约瑟夫问题，一群人去自杀，每个人抽（叫）一个号，当叫到M时此人自杀，问最后一个自杀的是多少号。</p>
+<li><p>用java实现经典约瑟夫问题，一群人去自杀，每个人抽（叫）一个号，当叫到M时此人自杀，问最后一个自杀的是多少号。<br> <del>也不知道这样是不是正确:</del>  这是错误的正确参考下面给出的链接<br> <del>public static void main(String[] args) {</del><br> <del>Integer[] data = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };</del><br> <del>ArrayList<integer> aList = new ArrayList&lt;&gt;();</integer></del><br> <del>aList.addAll(Arrays.asList(data));</del><br> <del>for (Iterator iterator = aList.iterator(); iterator.hasNext();) {</del><br> <del>Random dom = new Random();</del><br> <del>aList.remove(dom.nextInt(aList.size()));</del><br> <del>System.out.println(“剩下的值”+aList);</del><br> <del>}</del><br> <del>}</del><br> <a href="http://blog.csdn.net/tianqingdezhuanlan/article/details/52304263" target="_blank" rel="external">博客</a></p>
+</li>
+<li><p>如何加快Activity的启动速度？</p>
 </li>
 </ol>
-<p>总共九道，有一个记不清了，另外一个是布局题没什么难度， 这个约瑟夫问题不知道怎么解决，没答，我自己思考就是一个集合，随机删除一个元素，最后删除的一个是谁。还有个是用js调用java中的方法，对Js了解的少，不清楚。</p>
+<p>总共九道，<del>有一个记不清了</del> 想起来了，另外一个是布局题没什么难度， 这个约瑟夫问题不知道怎么解决，没答，我自己思考就是一个集合，随机删除一个元素，最后删除的一个是谁。还有个是用js调用java中的方法，对Js了解的少，不清楚。</p>
 <p>答完后人事过来面，栽了， 问了一些个人情况，你自己的优点，缺点啊。<br>另外问了 公司为什么要录用你。期间问了下，你是不是紧张，天可怜见，我摸爬滚打这么多年，紧张二字早就从我字典中删除了，当然要是一下子来四五个人怼我肯定还是会有点紧张的，但是solo真的没什么怕。<br>她之所以问，是因为我今天早上自己作死，用手机刷了两小时的 B乎和B站<br>眼睛睁不开了，再也不能这样了，这两个破软件早晚给卸载了。</p>
 <p>人事没过，技术面都没有，真鸡巴惨！</p>
 
