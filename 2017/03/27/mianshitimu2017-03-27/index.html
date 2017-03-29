@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="计划," />
+  <meta name="keywords" content="面试," />
 
 
 
@@ -87,19 +87,19 @@
 
 
 
-<meta name="description" content="计划说明要详细了解的有：1.Java 内部类  先滚去学习java内部类了2.java list、map、set3.java 
-另外还要详细学习的有：嗯还要写个java计划">
+<meta name="description" content="没时间解释了，必须做专项训练了。先从基础说起。
+2.Activity、Fragment的生命周期与四种启动模式    activity:          oncreate-&amp;gt; onstart -&amp;gt; onResume -&amp;gt; onpause -&amp;gt; onstop - &amp;gt; ondestroy          当activity 停止 并没销毁时，调用onRestart">
 <meta property="og:type" content="article">
-<meta property="og:title" content="计划书">
-<meta property="og:url" content="http://yoursite.com/2017/03/23/计划书/index.html">
+<meta property="og:title" content="android基础面试题">
+<meta property="og:url" content="http://yoursite.com/2017/03/27/mianshitimu2017-03-27/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="计划说明要详细了解的有：1.Java 内部类  先滚去学习java内部类了2.java list、map、set3.java 
-另外还要详细学习的有：嗯还要写个java计划">
-<meta property="og:updated_time" content="2017-03-23T02:21:19.841Z">
+<meta property="og:description" content="没时间解释了，必须做专项训练了。先从基础说起。
+2.Activity、Fragment的生命周期与四种启动模式    activity:          oncreate-&amp;gt; onstart -&amp;gt; onResume -&amp;gt; onpause -&amp;gt; onstop - &amp;gt; ondestroy          当activity 停止 并没销毁时，调用onRestart">
+<meta property="og:updated_time" content="2017-03-28T14:41:18.740Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="计划书">
-<meta name="twitter:description" content="计划说明要详细了解的有：1.Java 内部类  先滚去学习java内部类了2.java list、map、set3.java 
-另外还要详细学习的有：嗯还要写个java计划">
+<meta name="twitter:title" content="android基础面试题">
+<meta name="twitter:description" content="没时间解释了，必须做专项训练了。先从基础说起。
+2.Activity、Fragment的生命周期与四种启动模式    activity:          oncreate-&amp;gt; onstart -&amp;gt; onResume -&amp;gt; onpause -&amp;gt; onstop - &amp;gt; ondestroy          当activity 停止 并没销毁时，调用onRestart">
 
 
 
@@ -127,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/03/23/计划书/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/27/mianshitimu2017-03-27/"/>
 
 
 
 
 
-  <title> 计划书 | Hexo </title>
+  <title> android基础面试题 | Hexo </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -252,7 +252,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/23/计划书/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/27/mianshitimu2017-03-27/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="xingLu">
@@ -273,7 +273,7 @@
             
             
               
-                计划书
+                android基础面试题
               
             
           </h1>
@@ -288,8 +288,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-23T09:58:08+08:00">
-                2017-03-23
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-27T20:04:21+08:00">
+                2017-03-27
               </time>
             
 
@@ -324,8 +324,17 @@
       
 
       
-        <h1 id="计划说明"><a href="#计划说明" class="headerlink" title="计划说明"></a>计划说明</h1><p>要详细了解的有：<br>1.Java 内部类  先滚去学习java内部类了<br>2.java list、map、set<br>3.java </p>
-<p>另外还要详细学习的有：<br>嗯还要写个java计划</p>
+        <p>没时间解释了，必须做专项训练了。先从基础说起。</p>
+<p>2.Activity、Fragment的生命周期与四种启动模式<br>    activity:<br>          oncreate-&gt; onstart -&gt; onResume -&gt; onpause -&gt; onstop - &gt; ondestroy<br>          当activity 停止 并没销毁时，调用onRestart<br>    启动模式：分别为 standard、 singleTop 、singleTask、 singleInstance<br>            singleTop:栈顶复用模式，当一个activity设置为这个模式后，启动时会先判断栈顶是否是当前activity有就不会重新创建，直接调用onNewIntent方法，当不是在栈顶就会重新创建。<br>            singleTask:栈内复用模式，设置为此模式后，会专门给activity开一个栈，独立运行，不管重复创建多少次都只有一个，只是重新调用onNewIntent，在这个栈里如果不是栈顶，会直接把它放到栈顶，中间的activity会被移除。<br>            singleInstance:单实例模式,是一种加强的singleTask模式，跟singleTask一样的特性，还加强了当activity设置此模式后，会独立运行在一个栈中，并且栈内不能有除此之外的Activity存在。<br>            standard:默认的标准模式，直接启动一个activity，不管存在多少个。<br>    Fragment:<br>         onAttach-&gt;onCreate-&gt;onCreateView -&gt; onActivityCreated -&gt;onStart-&gt;onResume-&gt;onpause-&gt;onStop-&gt;onDestroyView -&gt; onDestroy<br>         -&gt;onDetach<br>         attach：作用是与activity关联。<br>         开发过程中主要是用onCreateView，</p>
+<p>3.Android动画</p>
+<p>4.View的绘制流程<br>    view的工作流程，主要是指measure,layout,draw这三大流程，<br>    其中measure确定View的测量 宽/高,layout确定View的最终宽/高和这四个顶点的位置，而draw则将View绘制到屏幕上。<br>     measure:measure在自定义中重写onMeasure把测量后的值通过setMeasuredDimension(宽，高),<br>     layout:会通过setFrame设置四个顶点的位置，即初始化左右上下四个值，view的四个顶点就可以确定它在父容器中的位置，接着会调用子类的onLayout()这方法是父容器确定子元素的位置<br>     draw:先绘制背景，再绘制自己，再绘制 children（子view）,再绘制装饰。<br>5.Sqlite 相关</p>
+<p>6.图片加载机制<br>    1.图片加载首先会对bitmap进行一个压缩，压缩过程需要对bitmap设置一个缩放比率，缩放比率的计算通过，目标View接受的宽高，图片的宽高来计算，<br>    首先判断图片宽高是否大于View的宽高，是就除以缩放比率，然后继续判断是否大于，缩放比率在每一次循环过程中都剩以2，为什么剩以2，是因为倍数缩放效果更稳定，<br>    2.缓存：分为两类内存缓存（最多使用LruCache）以及磁盘缓存（最多使用DiskLruCache）</p>
+<p>7.网络调用</p>
+<p>8.Touch事件机制</p>
+<p>9.Android跨进程通讯方式</p>
+<p>10.binder的理解</p>
+<p>11.屏幕适配</p>
+<p>12</p>
 
       
     </div>
@@ -355,7 +364,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/计划/" rel="tag"># 计划</a>
+            <a href="/tags/面试/" rel="tag"># 面试</a>
           
         </div>
       
@@ -368,8 +377,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/22/面试中遇到的一些问题/" rel="next" title="面试中遇到的一些问题">
-                <i class="fa fa-chevron-left"></i> 面试中遇到的一些问题
+              <a href="/2017/03/27/review-3-27/" rel="next" title="27号的复习记录-正则表达式记录">
+                <i class="fa fa-chevron-left"></i> 27号的复习记录-正则表达式记录
               </a>
             
           </div>
@@ -377,10 +386,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/03/23/201703232104/" rel="prev" title="内部类、map、list、set 小记">
-                内部类、map、list、set 小记 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -427,17 +432,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -490,22 +486,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#计划说明"><span class="nav-number">1.</span> <span class="nav-text">计划说明</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
