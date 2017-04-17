@@ -88,18 +88,18 @@
 
 
 <meta name="description" content="没时间解释了，必须做专项训练了。先从基础说起。
-2.Activity、Fragment的生命周期与四种启动模式    activity:          oncreate-&amp;gt; onstart -&amp;gt; onResume -&amp;gt; onpause -&amp;gt; onstop - &amp;gt; ondestroy          当activity 停止 并没销毁时，调用onRestart">
+1.Android消息机制2.Activity、Fragment的生命周期与四种启动模式activity:oncreate-&amp;gt; onstart -&amp;gt; onResume -&amp;gt; onpause -&amp;gt; onstop - &amp;gt; ondestroy当activity 停止 并没销毁时，调用onRestart启动模式：分别为 stan">
 <meta property="og:type" content="article">
 <meta property="og:title" content="android基础面试题">
 <meta property="og:url" content="http://yoursite.com/2017/03/27/mianshitimu2017-03-27/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="没时间解释了，必须做专项训练了。先从基础说起。
-2.Activity、Fragment的生命周期与四种启动模式    activity:          oncreate-&amp;gt; onstart -&amp;gt; onResume -&amp;gt; onpause -&amp;gt; onstop - &amp;gt; ondestroy          当activity 停止 并没销毁时，调用onRestart">
-<meta property="og:updated_time" content="2017-03-28T14:41:18.740Z">
+1.Android消息机制2.Activity、Fragment的生命周期与四种启动模式activity:oncreate-&amp;gt; onstart -&amp;gt; onResume -&amp;gt; onpause -&amp;gt; onstop - &amp;gt; ondestroy当activity 停止 并没销毁时，调用onRestart启动模式：分别为 stan">
+<meta property="og:updated_time" content="2017-04-17T17:07:18.460Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="android基础面试题">
 <meta name="twitter:description" content="没时间解释了，必须做专项训练了。先从基础说起。
-2.Activity、Fragment的生命周期与四种启动模式    activity:          oncreate-&amp;gt; onstart -&amp;gt; onResume -&amp;gt; onpause -&amp;gt; onstop - &amp;gt; ondestroy          当activity 停止 并没销毁时，调用onRestart">
+1.Android消息机制2.Activity、Fragment的生命周期与四种启动模式activity:oncreate-&amp;gt; onstart -&amp;gt; onResume -&amp;gt; onpause -&amp;gt; onstop - &amp;gt; ondestroy当activity 停止 并没销毁时，调用onRestart启动模式：分别为 stan">
 
 
 
@@ -325,17 +325,102 @@
 
       
         <p>没时间解释了，必须做专项训练了。先从基础说起。</p>
-<p>2.Activity、Fragment的生命周期与四种启动模式<br>    activity:<br>          oncreate-&gt; onstart -&gt; onResume -&gt; onpause -&gt; onstop - &gt; ondestroy<br>          当activity 停止 并没销毁时，调用onRestart<br>    启动模式：分别为 standard、 singleTop 、singleTask、 singleInstance<br>            singleTop:栈顶复用模式，当一个activity设置为这个模式后，启动时会先判断栈顶是否是当前activity有就不会重新创建，直接调用onNewIntent方法，当不是在栈顶就会重新创建。<br>            singleTask:栈内复用模式，设置为此模式后，会专门给activity开一个栈，独立运行，不管重复创建多少次都只有一个，只是重新调用onNewIntent，在这个栈里如果不是栈顶，会直接把它放到栈顶，中间的activity会被移除。<br>            singleInstance:单实例模式,是一种加强的singleTask模式，跟singleTask一样的特性，还加强了当activity设置此模式后，会独立运行在一个栈中，并且栈内不能有除此之外的Activity存在。<br>            standard:默认的标准模式，直接启动一个activity，不管存在多少个。<br>    Fragment:<br>         onAttach-&gt;onCreate-&gt;onCreateView -&gt; onActivityCreated -&gt;onStart-&gt;onResume-&gt;onpause-&gt;onStop-&gt;onDestroyView -&gt; onDestroy<br>         -&gt;onDetach<br>         attach：作用是与activity关联。<br>         开发过程中主要是用onCreateView，</p>
-<p>3.Android动画</p>
-<p>4.View的绘制流程<br>    view的工作流程，主要是指measure,layout,draw这三大流程，<br>    其中measure确定View的测量 宽/高,layout确定View的最终宽/高和这四个顶点的位置，而draw则将View绘制到屏幕上。<br>     measure:measure在自定义中重写onMeasure把测量后的值通过setMeasuredDimension(宽，高),<br>     layout:会通过setFrame设置四个顶点的位置，即初始化左右上下四个值，view的四个顶点就可以确定它在父容器中的位置，接着会调用子类的onLayout()这方法是父容器确定子元素的位置<br>     draw:先绘制背景，再绘制自己，再绘制 children（子view）,再绘制装饰。<br>5.Sqlite 相关</p>
-<p>6.图片加载机制<br>    1.图片加载首先会对bitmap进行一个压缩，压缩过程需要对bitmap设置一个缩放比率，缩放比率的计算通过，目标View接受的宽高，图片的宽高来计算，<br>    首先判断图片宽高是否大于View的宽高，是就除以缩放比率，然后继续判断是否大于，缩放比率在每一次循环过程中都剩以2，为什么剩以2，是因为倍数缩放效果更稳定，<br>    2.缓存：分为两类内存缓存（最多使用LruCache）以及磁盘缓存（最多使用DiskLruCache）</p>
-<p>7.网络调用</p>
-<p>8.Touch事件机制</p>
-<p>9.Android跨进程通讯方式</p>
-<p>10.binder的理解</p>
-<p>11.屏幕适配</p>
-<p>12</p>
+<h2 id="1-Android消息机制"><a href="#1-Android消息机制" class="headerlink" title="1.Android消息机制"></a>1.Android消息机制</h2><h2 id="2-Activity、Fragment的生命周期与四种启动模式"><a href="#2-Activity、Fragment的生命周期与四种启动模式" class="headerlink" title="2.Activity、Fragment的生命周期与四种启动模式"></a>2.Activity、Fragment的生命周期与四种启动模式</h2><p>activity:<br>oncreate-&gt; onstart -&gt; onResume -&gt; onpause -&gt; onstop - &gt; ondestroy<br>当activity 停止 并没销毁时，调用onRestart<br>启动模式：分别为 standard、 singleTop 、singleTask、 singleInstance<br>singleTop:栈顶复用模式，当一个activity设置为这个模式后，启动时会先判断栈顶是否是当前activity有就不会重新创建，直接调用onNewIntent方法，当不是在栈顶就会重新创建。<br>singleTask:栈内复用模式，设置为此模式后，会专门给activity开一个栈，独立运行，不管重复创建多少次都只有一个，只是重新调用onNewIntent，在这个栈里如果不是栈顶，会直接把它放到栈顶，中间的activity会被移除。<br>singleInstance:单实例模式,是一种加强的singleTask模式，跟singleTask一样的特性，还加强了当activity设置此模式后，会独立运行在一个栈中，并且栈内不能有除此之外的Activity存在。<br>standard:默认的标准模式，直接启动一个activity，不管存在多少个。<br>Fragment:<br>onAttach-&gt;onCreate-&gt;onCreateView -&gt; onActivityCreated -&gt;onStart-&gt;onResume-&gt;onpause-&gt;onStop-&gt;onDestroyView -&gt; onDestroy-&gt;onDetach<br>attach：作用是与activity关联。<br>开发过程中主要是用onCreateView，</p>
+<h2 id="3-Android动画"><a href="#3-Android动画" class="headerlink" title="3.Android动画"></a>3.Android动画</h2><p>android动画主要分为三种动画，分别是指View动画，帧动画，属性动画。<br>先从View动画说起，view动画又分为，4种类型动画，分别是 translate(平移)、scale(缩放)、alpha(透明)、rotate(旋转)<br>translate主要通过animation的子类，TranslateAnimation来使用， scale通过ScaleAnimation来使用，alpha通过AlphaAnimation来使用，rotate通过RotateAnimation使用。<br>view动画主要使用场景是在Activity中实现不同Activity之间的切换效果。view动画的缺点就是不能改变View位置，比如说当我平移一个Button后，Butto的位置还在原来的地方。<br>帧动画本质上也是一种view动画，它是顺序播放一组预先定制好的图片，类似于电影播放，它主要通过AnimationDrawable类来使用帧动画，使用简单但容易内存泄漏，所以使用时候要尽量避免使用过多的尺寸较大的图片<br>属性动画是Api11加入的，属性动画可以对任意对象的属性进行动画而不仅仅是View,属性动画主要常用的类是ValueAnimation,ObjectAnimation,AnimatorSet,其中ObjectAnimation继承ValueAnimation, AnimatorSet时动画集合<br>属性动画里有两个重要概念，TimeInterpolator（时间插值器）和 TypeEvaluator（估值器）前者作用是根据时间流逝的百分比来计算当前属性值的改变百分比,系统预置有LinearInterpolator（线性插值器）AccelerateDecelerateInterpolator(增速减速插值器)等。后者作用是根据当前属性改变的百分比来计算改变后的属性值，系统预置的有IntEvaluator、FloatEvaluator、ArgbEvaluator. 它们两者是实现非匀速动画的重要手段。<br>属性动画主要有这两种监听器，AnimatorUpdateListener和AnimatorListener. AnimatorListener可以监听动画的开始、结束、取消、以及重复播放。AnimatorUpdateListener<br>属性动画的原理:属性动画要求动画作用的对象提供该属性的get和set方法，属性动画根据外界传递的该属性的初始值和最终值，以动画的效果多次去调用set方法，每次传递的给set方法的值都不一样，确切的说是随着时间的推移，所传递的值<br>越来越接近最终值。对object的属性abc进行动画，如果想让动画正确生效，要同时满足两个条件：<br> 1）object必须提供setAbc方法，如果动画的时候没有传递初始值，那么还要提供getAbc方法，因为系统要去取abc属性的初始值（如果这条不满足程序直接Crash）<br> 2）object的setAbc对属性abc所做的改变必须能够通过某种方法反映出来，比如会带来UI的改变之类的（如果不满足，动画无效果但不会Crash）<br>解决办法有3种<br>1.如果你有权限的话，给你的对象加上get、set方法。<br>2.用一个类来包装原始对象，间接为其提供get、set方法。<br>3.采用ValueAnimator，监听动画过程，自己实现属性的改变。<br>第一种最简单，但往往我们并没有权限无法更改。<br>第二种采用类包装：</p>
+<pre><code>private static class ViewWrapper{
 
+     private View mTarget;
+
+     public ViewWrapper(View target){
+         mTarget = target;
+     }
+
+     public int getWidth(){
+         return mTarget.getLayoutParams().width;
+     }
+
+     public void setWidth(int width){
+          mTarget.getLayoutParams().width - width;
+          mTarget.requestLayout();
+     }
+}
+</code></pre><p>第三种 ValueAnimator本身不作用于任何对象，也就是说直接使用它没用任何动画效果。它可以对一个值做动画，然后我们可以监听其动画过程，在动画过程中修改我们对象的属性值，<br>这样也就相当于我们的对象做了动画。</p>
+<pre><code>private void performAnimate(final View target,final int start ,final int end){
+
+    ValueAnimator valueAnimator = ValueAnimator.ofInt (1,100);
+    valueAnimator.addUpdateListener(new AnimatorUpdateListener(){
+        //持有一个IntEvaluator对象，方便下面估值时使用
+        private IntEvaluator mEvalutor = new IntEvaluator();
+
+        @Override
+        public void onAnimationUpdate(ValueAnimator animator){
+            //获得当前动画的进度值，整型，1~100之间
+            int currentValue = (Integer)animator.getAnimatedValue();
+
+            //获得当前进度占整个动画过程的比例，浮点型 0~1之间；
+            float fraction = animator.getAnimatedFraction();
+            //直接调用整型估值器，通过比例计算出宽度，然后再给Button.
+            target.getLayoutParams().width = mEvalueator.evaluate(fraction,start,end);
+            target.requestLayout();
+
+        }
+        });
+        valueAnimator.setDuration(5000).start();
+}
+
+public void onClick(View v){
+    if(v == mButton){
+        performAnimate(mButton,mButton.getWidth,500)
+    }
+}
+</code></pre><p>上面的列子它会再5s内将一个数字从1变到100，然后动画的每一帧都会回调onAnimationUpdate方法，在这个方法里，我们可以获取当前的值（1~100）和当前值所占的比例，我们可以计算出button现在的宽度应该是多少。<br> 比如时间过了一半，当前值是50，比例为0.5,，假设Button的起始宽度100px,最终宽度是500px,那么Button增加的宽度也应该占总增加宽度的一半，总增加宽度是500-100=400，所以这个时候Button应该增加的宽度是400*0.5 =200,<br> 那么当前Button的宽度应该为初始宽度+增加的宽度（100+200=300）。这个是IntEvaluator的内部实现。</p>
+<p> 动画中容易出现的问题，主要以下几种<br> 1，OOM问题，这个问题主要出现在帧动画中，当图片数量较多的时候且图片较大时极易出现OOM。<br> 2，内存泄漏，在属性动画中有一类无限循环的动画，这类动画需要在Activity退出时及时停止，否则会导致Activity无法释放从而造成内存泄漏，View动画无此问题。<br> 3，兼容性问题，动画在3.0以下有兼容性问题，在某些特殊场景无法正常工作因此要做号适配。<br> 4，View动画的问题，View动画时对View的影像做动画，并不是真正改变View的状态，因此会出现动画完成后View无法隐藏的现象，即setVisibility(View.Gone)失效了，这个时候调用View.clearAnimation清除View动画即可以解决。<br> 5,不要使用px，在进行动画过程中要尽量使用dp,使用px会导致在不同的设备上有不同的效果，<br> 6，动画元素的交互，将View平移后，在 3.0以前的系统，不管是View动画还是属性动画，新位置均无法触发点击事件，老位置仍然可以触发点击事件，尽管view在视觉上已经不存在了，将View移回原位置后，原位置的单击事件继续生效，3.0以后属性动画的单击事件触发位置为移动后的位置，但是View动画仍然在原位置。<br> 7，硬件加速，使用动画过程中建议开启硬件加速，这样会提高动画的流畅性。</p>
+<h2 id="4-View的绘制流程"><a href="#4-View的绘制流程" class="headerlink" title="4.View的绘制流程"></a>4.View的绘制流程</h2><p>view的工作流程，主要是指measure,layout,draw这三大流程<br>其中measure确定View的测量宽/高,layout确定View的最终宽/高和这四个顶点的位置，而draw则将View绘制到屏幕上。<br>measure: 在View中它通过measure方法就完成测量过程，在ViewGroup中除了完成自己的测量过程外，它还会遍历所有子元素的measure方法，各个子元素再递归去执行这个流程。<br>在View中measure会调用onMeasure方法，在ViewGroup中，它没有重写View的onMeasure方法，但是它提供了一个叫measureChildren方法，这个方法里会遍历子元素并对其进行measure,<br>measure在自定义中重写onMeasure把测量后的值通过setMeasuredDimension(宽，高)完成。<br>layout:Layout的作用是ViewGroup用来确定子元素的位置，当ViewGroup的位置被确定后，它在onLayout中会遍历所有子元素并调用其layout方法，在layout方法中onLayout方法又会被调用。<br>layout方法确定View本身的位置，而onLayout方法则会确定所有子元素的位置。用会通过setFrame设置View四个顶点的位置，即初始化左右上下四个值，view的四个顶点一旦确定，那么它在父容器中的位置就确定了，接着会调用onLayout这方法，这方法是在父容器确定子元素的位置和onMeasure方法类似，onLayout的具体实现是跟具体的布局有关，所以View和ViewGroup都没有真正实现onLayout方法。<br>draw:<br>1）先绘制背景 background.draw(canvas).<br>2）再绘制自己 onDraw<br>3) 再绘制 children (dispatchDraw)<br>4) 再绘制装饰 (onDrawScrollBars)</p>
+<p>在自定义View中主要分为4类<br>1.继承View重写onDraw方法<br>  这种方法是为了实现一些不规则的效果，这种效果不方便通过布局的组合方式达到，往往需要静态的或者动态地显示一些不规则的图形，很显然需要通过绘制的方式来实现，即重写onDraw<br>  采用这种方式需要自己支持wrap_content且padding也需要处理。<br>2.继承ViewGroup派生特殊的Layout<br>  这种方法主要是实现自定义布局，这种方法处理复杂些，需要合适地处理ViewGroup的测量、布局两个过程，并同时处理子元素的测量和布局过程，<br>3.继承特定的View(比如TextView)<br>  这种方法用的比较多，主要用来已有的View功能，比如TexView,这种不需要支持wrap_content、panding<br>4.继承特定的ViewGroup(比如LinearLayout)<br>  当效果是几种View组合在一起的时候可以用这种方法来实现，这种方法不需要处理ViewGroup的测量和布局两个过程，2能实现效果4也能实现，它们区别是2更加接近View底层。<br>自定义中需要注意的事项<br>1.让View支持wrap_content<br>因为直接继承View或者ViewGroup的控件，如果不在onMeasure对wrap_content做处理，那么当外界在布局中使用wrap_content时就无法达到预期效果。<br>2.如果有必要让你的View支持padding<br>因为直接继承View的控件，如果不在draw方法中处理padding那么padding属性是无法起作用的，另外继承ViewGroup的控件需要在onMeasure方法和onLayout方法考虑padding和子元素的margin对其造成的影响<br>3.尽量不要在View中使用hanlder。<br>这是因为View内部本身就提供了post系列方法，完全可以替代Handler的作用，当然除非你很明确的要使用Hanlder来发送消息。<br>4.View中如果有线程或者动画，需要及时停止。View#onDetachedFromWindow<br>当有线程或者动画时需要停止时，可以在onDetachedFromWindow停止。当包含此View的Activity退出时或者被remove时，View的onDetachedFromWindow方法会被调用，和此方法对应的是onAttachedToWindow<br>当包含此View的Activity启动时，View的onAttachToWindow方法会被调用。同时当View变得不可见时我们也需要停止动画和线程，否则会造成内存溢出<br>5.View带有滑动嵌套时，需要处理好适当的滑动冲突。</p>
+<h2 id="5-Sqlite-相关"><a href="#5-Sqlite-相关" class="headerlink" title="5.Sqlite 相关"></a>5.Sqlite 相关</h2><h2 id="6-图片加载机制"><a href="#6-图片加载机制" class="headerlink" title="6.图片加载机制"></a>6.图片加载机制</h2><p>加载图片在Android中主要是通过BitmapFactory类，该类提供了4种类型方法：decodeFile、decodeResource、decodeStream、decodeByteArray.分别用于从文件系统、资源、输入流、以及字节数组，中加载出一个Bitmap对象。<br>想要高效加载Bitmap核心思想是用Bitmap.Options来加载所需尺寸的图片，这里假设通过ImageView来显示图片，很多时候ImageView所需要的图片不是那么大，通过BitmapFactory.Options就会按一定的采样率来加载缩小后的图片<br>将缩小后的图片在ImageView中显示，这样会降低内存占用从而一定程度上避免OOM，提高了Bitmap加载时的性能。<br>通过BitmapFactory.Options缩放图片，主要用到了inSampleSize参数，即采样率当inSampleSize为1时，采样为原始图片大小，当为2时采样图片的大小为原图的 1/2大小，而像素数为原图的1/4,其占有的内存大小为原图的1/4.<br>android官方文档指出，inSampleSize的取值应该总为2的指数，比如1,2,4,8,16..,如果不为2的指数那么系统会向下取整并选择一个最接近2的指数代替，比如3系统会用2来代替，但并不是所有android版本都这样的，因此只能算一个建议。<br>具体采样率流程是如下，<br>1，将BitmapFactory.Options的inJustDecodeBounds参数设置为true并加载图片<br>2，从BitmapFactory.Options中取出图片的原始宽高信息，它们对应于outWidth和outHeight。<br>3，根据采样率的规则并结合目标View的所需大小计算出采样率inSampleSize,<br>4, 将BitmapFactory.Options的inJustDecodBoudns的参数设置为false，然后重新加载图片，<br>当inJustDecodeBounds设置为ture时并不会真正的加载图片只会去加载原始的宽高信息。</p>
+<pre><code>public static Bitmap decodSampledBitmapFromResouce（Resource res,int resId,int reqWidth，int reqHeight）{
+    BitmapFactory.Options options = new BitmapFactory.Options();
+    options.inJustDecodeBounds = true;
+    BitmapFactory.decodeResource(res,resId,options);
+
+    options.inSampleSize = calculateInSampleSize(options,reqWidth,reqHeight);
+
+    options.inJustDecodeBounds = false;
+    return BitmapFactory.decodeResoucre(res,resId,options)    ;
+}
+//这个方法主要是计算缩放比率，原始图片宽高是否大于ImageView需求的宽,高 如果大于就对缩放比率乘以2。
+public static int calculateInSampleSize(BitmapFactory.Options options,int reqWidth,int reqHeight){
+     final int height = options.outHeight;
+     final int width = options.outWidth;
+     int inSampleSize = 1;
+     if(height&gt; reqHeight || width &gt;reqWidth){
+         fianl int halfHeight = height /2;
+         final int halfwidth  = width / 2;
+         while((halfHeight / inSampleSize) &gt;= reqHeight &amp;&amp; (halfWidth / inSampleSize )&gt;= reqWidth){
+             imSampleSize *= 2;
+         }
+     }
+     return inSampleSize;
+}
+</code></pre><p>另外在android中都会采用一定缓存策略，目前常用的一种缓存算法是LRU(Least Recently Used),LRU 是近期最少使用算法，<br>它的核心思想是当缓存满时，会优先淘汰那些近期最少使用的缓存对象，采用LRU算法的缓存有两种 LruCache和DiskLruCache,LruCache用于实现内存缓存，而DiskLruCache则充当了存储设备缓存，<br>通过二者的完美结合，就可以方便地实现一个具有很高的实现价值的ImageLoader.</p>
+<h2 id="7-网络调用"><a href="#7-网络调用" class="headerlink" title="7.网络调用"></a>7.网络调用</h2><p>在android中网络调用方面主要使用的HttpUrlConnection,HttpClient（在6.0中已经被移除）官方推荐使用HttpUrlConnection<br>现今用的比较多的是OkHttp,OkHttp是一个开源框架，OkHttp使用方式很简单</p>
+<h2 id="8-Touch事件机制"><a href="#8-Touch事件机制" class="headerlink" title="8.Touch事件机制"></a>8.Touch事件机制</h2><p>点击事件的分发：其实就是MotionEvent事件的分发过程，当一个MotionEvent产生以后，系统需要把这个事件传递给一个具体的View,而这个传递过程就是分发过程<br>点击事件的分发需要三个很重要的方法来共同完成：dispatchTouchEvent、onInterceptTouchEvent和onTouchEvent。<br>public boolean dispatchTouchEvent(MotionEvent ev)<br>用来进行事件分发。如果事件能够传递给当前view 那么此方法一定会被调用，返回结果受当前View 的onTouchEvent和下级view的dispatchTouchEvent方法的影响，表示是否消耗当前事件。</p>
+<p>public boolean onInterceptTouchEvent(MotionEvent ev)<br>用来判断是否拦截某个事件，如果当前view拦截了某个事件那么在同一事件序列中此方法不会再次被调用。<br>public boolean onTouchEvent(MotionEvent ev)<br>用来处理点击事件，在dispatchTouchEvent方法中调用，返回结果表示是否消耗当前事件，如果不消耗 在同一事件序列中当前view无法再收到事件，</p>
+<pre><code>三者区别用伪代码表示如下：
+
+    public boolean dispatchTouchEvent(MotionEvent ev){
+        boolean consume = false;
+        if(onInterceptTouchEvent(ev)){
+            consume = onTouchEvent(ev);
+        }else{
+            consume = child.dispatchTouchEvent(ev);
+        }
+        return consume;
+    }
+</code></pre><p>通过上述伪代码可以大致了解点击事件的传递规则：对于一个根ViewGroup来说，点击事件产生后，首先会传递给它，这时它的dispatchTouchEvent会被调用，如果这个ViewGroup的onInterceptTouchEvent返回true就表示它要拦截当前事件，接着事件会交给ViewGroup的onTouchEvent方法来处理<br>如果ViewGroup的onInterceptTouchEvent不拦截，就会发给子View,接着子View的dispatchTouchEvent方法会被调用，如此反复直到事件被最终处理。<br>实际上分发的完整顺序是 Activity &gt; Window &gt; 顶级View ,顶级View按照事件分发机制去分发事件。</p>
+<h2 id="9-Android跨进程通讯方式"><a href="#9-Android跨进程通讯方式" class="headerlink" title="9.Android跨进程通讯方式"></a>9.Android跨进程通讯方式</h2><p> 在跨进程通讯过程中，主要使用的是三方面的内容，Serializable和Parcelable接口以及binder<br> 当我们需要使用Binder或Intent传输数据时，就要使用序列化过的数据集，也就是实现了Serializable和Parcelable接口的实体类，</p>
+<h2 id="10-binder的理解"><a href="#10-binder的理解" class="headerlink" title="10.binder的理解"></a>10.binder的理解</h2><p>Binder是一种跨进程的传输方式。</p>
+<h2 id="11-屏幕适配"><a href="#11-屏幕适配" class="headerlink" title="11.屏幕适配"></a>11.屏幕适配</h2>
       
     </div>
 
@@ -432,8 +517,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -486,6 +580,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Android消息机制"><span class="nav-number">1.</span> <span class="nav-text">1.Android消息机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Activity、Fragment的生命周期与四种启动模式"><span class="nav-number">2.</span> <span class="nav-text">2.Activity、Fragment的生命周期与四种启动模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Android动画"><span class="nav-number">3.</span> <span class="nav-text">3.Android动画</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-View的绘制流程"><span class="nav-number">4.</span> <span class="nav-text">4.View的绘制流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-Sqlite-相关"><span class="nav-number">5.</span> <span class="nav-text">5.Sqlite 相关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-图片加载机制"><span class="nav-number">6.</span> <span class="nav-text">6.图片加载机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-网络调用"><span class="nav-number">7.</span> <span class="nav-text">7.网络调用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-Touch事件机制"><span class="nav-number">8.</span> <span class="nav-text">8.Touch事件机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-Android跨进程通讯方式"><span class="nav-number">9.</span> <span class="nav-text">9.Android跨进程通讯方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-binder的理解"><span class="nav-number">10.</span> <span class="nav-text">10.binder的理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-屏幕适配"><span class="nav-number">11.</span> <span class="nav-text">11.屏幕适配</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
